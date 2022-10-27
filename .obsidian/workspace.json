@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "1c418e5d868de49a",
+        "id": "94b016291ce30694",
         "type": "tabs",
         "children": [
           {
-            "id": "d0de644aaf78693b",
+            "id": "c70654cd136be215",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "test.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "test.md"
+              }
             }
           }
         ]
@@ -128,8 +136,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d0de644aaf78693b",
+  "active": "c70654cd136be215",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
     "BuK/02. Vorlesung 12.10.22.md",
     "README.md"
   ]
