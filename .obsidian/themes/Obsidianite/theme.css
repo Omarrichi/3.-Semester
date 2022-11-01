@@ -15,7 +15,7 @@
    Light theme is still working in progress,
    but it wil come soon or later.
 ******************************************/
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 /* .theme-light {
   --background-primary: #fbfbfb;
   --background-primary-alt: #fbfbfb;
@@ -69,8 +69,8 @@
   --blockquote-border: #4aa8fb;
   --tag-background: rgba(14, 210, 247, 0.15);
   --interactive-accent-rgb: #3dd7fb;
-  --font-family-editor: 'Rubik';
-  --font-family-preview: 'Rubik';
+  --font-family-editor: 'Rubik', sans-serif;
+  --font-family-preview: 'Rubik', sans-serif;
   --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
   --bg-accent-55: rgba(14, 210, 247, 0.55);
   --bg-accent-25: rgba(14, 210, 247, 0.25);

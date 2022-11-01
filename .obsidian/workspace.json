@@ -4,16 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "c52bc392eee42208",
+        "id": "2d2a4c258e38b7d9",
         "type": "tabs",
         "children": [
           {
-            "id": "7b0229d17ba3a37b",
+            "id": "74f509a43cd85ea4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md",
+                "file": "DatKom/3. VL 28.10.22.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "4d3c2fd39bb57331",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3a733dd5646fb34",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DatKom/2. VL 24.10.22.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md",
+                "file": "DatKom/3. VL 28.10.22.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md",
+                "file": "DatKom/3. VL 28.10.22.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md"
+                "file": "DatKom/3. VL 28.10.22.md"
               }
             }
           },
@@ -145,17 +163,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7b0229d17ba3a37b",
+  "active": "74f509a43cd85ea4",
   "lastOpenFiles": [
-    "BuK/04. Vorlesung 19.10.22.md",
+    "DatKom/2. VL 24.10.22.md",
+    "DatKom/3. VL 28.10.22.md",
+    "KI/3. Vorlesung 25.10.22.md",
     "DatKom/1. VL 27.10.22.md",
-    "KI/1. Vorlesung 18.10.22.md",
     "BuK/02. Vorlesung 12.10.22.md",
+    "KI/4. Vorlesung 04.10.22.md",
+    "KI/2. Vorlesung 21.10.22.md",
+    "KI/1. Vorlesung 18.10.22.md",
     "WebTech/2. Woche 20.10 - 26.10.md",
-    "BuK/06. Vorlesung 26.10.22.md",
-    "WebTech/1. Woche 13.10 - 19.10.md",
-    "WebTech/4. Woche 10.11 - 16.11.md",
-    "2022-10-27.md",
-    "README.md"
+    "WebTech/1. Woche 13.10 - 19.10.md"
   ]
 }
