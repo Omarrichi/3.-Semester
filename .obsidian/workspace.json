@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md",
-                "mode": "preview",
+                "file": "KI/4. Vorlesung 04.10.22.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md",
+                "file": "KI/4. Vorlesung 04.10.22.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md",
+                "file": "KI/4. Vorlesung 04.10.22.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DatKom/1. VL 27.10.22.md"
+                "file": "KI/4. Vorlesung 04.10.22.md"
               }
             }
           },
@@ -147,15 +147,15 @@
   },
   "active": "7b0229d17ba3a37b",
   "lastOpenFiles": [
+    "02. Vorlesung 12.10.22.pdf",
+    "BuK/02. Vorlesung 12.10.22.md",
+    "BuK/06. Vorlesung 26.10.22.md",
     "BuK/04. Vorlesung 19.10.22.md",
+    "BuK/05. Vorlesung 25.10.22.md",
+    "BuK/03. Vorlesung 18.10.22.md",
     "DatKom/1. VL 27.10.22.md",
     "KI/1. Vorlesung 18.10.22.md",
-    "BuK/02. Vorlesung 12.10.22.md",
     "WebTech/2. Woche 20.10 - 26.10.md",
-    "BuK/06. Vorlesung 26.10.22.md",
-    "WebTech/1. Woche 13.10 - 19.10.md",
-    "WebTech/4. Woche 10.11 - 16.11.md",
-    "2022-10-27.md",
-    "README.md"
+    "WebTech/1. Woche 13.10 - 19.10.md"
   ]
 }
