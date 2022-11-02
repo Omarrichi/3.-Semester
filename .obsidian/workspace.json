@@ -18,17 +18,8 @@
                 "source": true
               }
             }
-          },
-          {
-            "id": "aa781faf10d44e34",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "KI/4. Vorlesung 04.10.22.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "KI/4. Vorlesung 04.10.22.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "KI/4. Vorlesung 04.10.22.md"
+              }
             }
           },
           {
@@ -150,7 +145,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "aa781faf10d44e34",
+  "active": "7b0229d17ba3a37b",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "KI/4. Vorlesung 04.10.22.md",
