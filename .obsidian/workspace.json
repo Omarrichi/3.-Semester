@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "afc95d2aca98fb12",
+            "id": "66f7af43df98eff8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "KI/4. Vorlesung 04.10.22.md",
+                "file": "PSP/Versuch 5.md",
                 "mode": "source",
                 "source": true
               }
@@ -22,17 +22,17 @@
         ]
       },
       {
-        "id": "3e98f6618475d102",
+        "id": "d748f92a4d5d9573",
         "type": "tabs",
         "children": [
           {
-            "id": "21fcb0ec62b2466b",
+            "id": "e32c1ee6b9be1868",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "KI/4. Vorlesung 04.10.22.md",
-                "mode": "preview",
+                "file": "PSP/Versuch 5.md",
+                "mode": "source",
                 "source": true
               }
             }
@@ -87,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "314790b69a4bf00e",
@@ -103,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "KI/4. Vorlesung 04.10.22.md",
+                "file": "PSP/Versuch 5.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "KI/4. Vorlesung 04.10.22.md",
+                "file": "PSP/Versuch 5.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "KI/4. Vorlesung 04.10.22.md"
+                "file": "PSP/Versuch 5.md"
               }
             }
           },
@@ -163,17 +164,27 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "afc95d2aca98fb12",
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "66f7af43df98eff8",
   "lastOpenFiles": [
-    "KI/3. Vorlesung 25.10.22.md",
-    "KI/4. Vorlesung 04.10.22.md",
-    "PSP/Versuch 2.md",
-    "KI/2. Vorlesung 21.10.22.md",
-    "PSP/Versuch 1.md",
-    "WebTech/3. Woche 27.10 - 9.11.md",
-    "PSP/Versuch 0.md",
-    "WebTech/2. Woche 20.10 - 26.10.md",
-    "WebTech/1. Woche 13.10 - 19.10.md",
-    "BuK/07. Vorlesung 02.11.22.md"
+    "BuK/13. Vorlesung 23.11.22.md",
+    "PSP/Versuch 5.md",
+    "Untitled.md",
+    "BuK/08. Vorlesung 08.11.22.md",
+    "PSP/Versuch 4.md",
+    "BuK/10. Vorlesung 15.11.22.md",
+    "Untitled.canvas",
+    "DatKom/3. VL 28.10.22.md",
+    "BuK/12. Vorlesung 22.11.22.md",
+    "DatKom/2. VL 24.10.22.md"
   ]
 }

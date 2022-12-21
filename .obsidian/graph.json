@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "path:BuK",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": true,
@@ -67,6 +67,6 @@
   "repelStrength": 5.20833333333333,
   "linkStrength": 1,
   "linkDistance": 121,
-  "scale": 0.7132754626224432,
+  "scale": 0.7132754626224441,
   "close": true
 }
