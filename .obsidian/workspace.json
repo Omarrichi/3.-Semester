@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PSP/Versuch 5.md",
+                "file": "BuK/13. Vorlesung 23.11.22.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "807fe354e2009598",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuK/14. Vorlesung 29.11.22.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "d748f92a4d5d9573",
@@ -31,8 +44,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PSP/Versuch 5.md",
-                "mode": "source",
+                "file": "BuK/14. Vorlesung 29.11.22.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -87,8 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "314790b69a4bf00e",
@@ -104,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PSP/Versuch 5.md",
+                "file": "BuK/14. Vorlesung 29.11.22.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "PSP/Versuch 5.md",
+                "file": "BuK/14. Vorlesung 29.11.22.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PSP/Versuch 5.md"
+                "file": "BuK/14. Vorlesung 29.11.22.md"
               }
             }
           },
@@ -174,17 +186,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "66f7af43df98eff8",
+  "active": "807fe354e2009598",
   "lastOpenFiles": [
-    "BuK/13. Vorlesung 23.11.22.md",
-    "PSP/Versuch 5.md",
-    "Untitled.md",
-    "BuK/08. Vorlesung 08.11.22.md",
-    "PSP/Versuch 4.md",
-    "BuK/10. Vorlesung 15.11.22.md",
-    "Untitled.canvas",
+    "BuK/14. Vorlesung 29.11.22.md",
     "DatKom/3. VL 28.10.22.md",
+    "DatKom/2. VL 24.10.22.md",
+    "DatKom/1. VL 27.10.22.md",
+    "BuK/13. Vorlesung 23.11.22.md",
+    "BuK/10. Vorlesung 15.11.22.md",
+    "BuK/11. Vorlesung 16.11.22.md",
     "BuK/12. Vorlesung 22.11.22.md",
-    "DatKom/2. VL 24.10.22.md"
+    "PSP/Versuch 5.md",
+    "BuK/08. Vorlesung 08.11.22.md"
   ]
 }
