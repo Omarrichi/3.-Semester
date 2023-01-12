@@ -25,14 +25,74 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BuK/14. Vorlesung 29.11.22.md",
+                "file": "BuK/12. Vorlesung 22.11.22.md",
+                "mode": "preview",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "7652286641677301",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuK/15. Vorlesung.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "6acb127b47210a77",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuK/16. Vorlesung.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "19e8f03885916f7d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuK/17. Vorlesung.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "c66a2ecc78398670",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuK/18. Vorlesung.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "3be8db59af8459eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BuK/19. Vorlesung.md",
                 "mode": "source",
                 "source": true
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       },
       {
         "id": "d748f92a4d5d9573",
@@ -116,7 +176,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BuK/14. Vorlesung 29.11.22.md",
+                "file": "BuK/19. Vorlesung.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +193,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BuK/14. Vorlesung 29.11.22.md",
+                "file": "BuK/19. Vorlesung.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +216,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BuK/14. Vorlesung 29.11.22.md"
+                "file": "BuK/19. Vorlesung.md"
               }
             }
           },
@@ -186,17 +246,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "807fe354e2009598",
+  "active": "3be8db59af8459eb",
   "lastOpenFiles": [
-    "BuK/14. Vorlesung 29.11.22.md",
-    "DatKom/3. VL 28.10.22.md",
-    "DatKom/2. VL 24.10.22.md",
-    "DatKom/1. VL 27.10.22.md",
-    "BuK/13. Vorlesung 23.11.22.md",
-    "BuK/10. Vorlesung 15.11.22.md",
-    "BuK/11. Vorlesung 16.11.22.md",
+    "BuK/18. Vorlesung.md",
+    "BuK/17. Vorlesung.md",
+    "BuK/16. Vorlesung.md",
+    "BuK/15. Vorlesung.md",
+    "BuK/19. Vorlesung.md",
     "BuK/12. Vorlesung 22.11.22.md",
-    "PSP/Versuch 5.md",
+    "BuK/11. Vorlesung 16.11.22.md",
+    "BuK/10. Vorlesung 15.11.22.md",
+    "BuK/09. Vorlesung 09.11.22.md",
     "BuK/08. Vorlesung 08.11.22.md"
   ]
 }
