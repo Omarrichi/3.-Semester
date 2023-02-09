@@ -352,6 +352,7 @@ Rewriting
 Ressource
 Reverse
 Reines
+Rightarrow
 objekten
 oder
 os
@@ -1365,6 +1366,8 @@ Webarchitektur
 Webserver
 Webentwicklung
 Webdokumenten
+Webseiten
+Wurzelobjekt
 Ein
 Eingabe
 Entschidungsvariante
@@ -1737,6 +1740,7 @@ Expirationsmodell
 Expirationzeit
 Entitäten
 Entwicklungs
+Engine
 rRücksack
 rekurtiven
 read
@@ -1998,6 +2002,7 @@ requires
 reversible
 responseheader
 request
+readyState
 mit
 maximiert
 mindestens
@@ -4250,6 +4255,7 @@ deleteChild
 definiere
 delegieren
 dynamischen
+document
 so
 sei
 sodass
@@ -5126,6 +5132,7 @@ side
 sendet
 selbstorganisiert
 standardisierten
+selektiert
 aus
 auf
 auch
@@ -5802,6 +5809,7 @@ anpassungsfähigen
 ausgelieferten
 aufbereiten
 ausliefern
+anfordern
 in
 ist
 ihre
@@ -5935,6 +5943,7 @@ implementieren
 inactive
 intepretiert
 img
+initalisiert
 passen
 proportional
 primitiv
@@ -6309,6 +6318,7 @@ Netzen
 Network
 Neben
 Netzwerkarchitekturen
+Neuladung
 wird
 werden
 wurden
@@ -7148,6 +7158,7 @@ Browser
 Bootstrap
 Beliebtes
 Basistechniken
+Browsers
 Packing
 Problem
 Passen
@@ -8650,6 +8661,10 @@ Analysieren
 Apache
 Applikationen
 Abstraktionslevel
+Animation
+AJAX
+Append
+API
 von
 vs
 verschwendet
@@ -9962,6 +9977,7 @@ Klassenselektor
 Kommunikationsprotokoll
 Komponentenbasiert
 Kontrollfluss
+Kurzschreibweise
 gesucht
 gegeben
 gelöst
@@ -11211,6 +11227,7 @@ Language
 Levels
 Laufzeitumgebung
 Lernkurve
+Laden
 Zielfunktion
 Zulässige
 Zeiteinheit
@@ -11725,6 +11742,7 @@ Message
 Markup
 Model
 Module
+Muss
 Funktion
 Funktionen
 Feedback
@@ -12434,6 +12452,8 @@ high
 häufigste
 html
 head
+heruntergeladen
+headline
 löst
 lösen
 lesbar
@@ -12803,6 +12823,8 @@ JavaScript
 JavaS
 JQuery
 JQ
+JS
+JSON
 Die
 Der
 Dann
@@ -13713,6 +13735,7 @@ neu
 nutzer
 name
 namespace
+navbar
 totale
 turing
 tot
@@ -14221,6 +14244,7 @@ Cookie
 CGI
 Common
 Controls
+Call
 Queue
 Quadratmeter
 Quadratmetern
@@ -14578,3 +14602,6 @@ qualifiziertes
 quasi
 quer
 XML
+XmlHttpRequest
+XHR
+xRightarrow
