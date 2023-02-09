@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebTech/4. Woche 10.11 - 16.11.md",
+                "file": "WebTech/5. Woche 17.11 - 23.11.md",
                 "mode": "source",
                 "source": true
               }
@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebTech/4. Woche 10.11 - 16.11.md",
+                "file": "WebTech/5. Woche 17.11 - 23.11.md",
                 "mode": "preview",
                 "source": true
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WebTech/4. Woche 10.11 - 16.11.md",
+                "file": "WebTech/5. Woche 17.11 - 23.11.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WebTech/4. Woche 10.11 - 16.11.md",
+                "file": "WebTech/5. Woche 17.11 - 23.11.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WebTech/4. Woche 10.11 - 16.11.md"
+                "file": "WebTech/5. Woche 17.11 - 23.11.md"
               }
             }
           },
@@ -173,14 +173,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c99e41d98c23f509",
+  "active": "e6662a7085e6d0c6",
   "lastOpenFiles": [
-    "WebTech/3. Woche 27.10 - 9.11.md",
     "WebTech/4. Woche 10.11 - 16.11.md",
     "WebTech/5. Woche 17.11 - 23.11.md",
+    "WebTech/6. Woche 24.11 - 30.11.md",
+    "WebTech/3. Woche 27.10 - 9.11.md",
     "WebTech/7. Woche 01.12 - 07.12.md",
     "WebTech/2. Woche 20.10 - 26.10.md",
-    "WebTech/6. Woche 24.11 - 30.11.md",
     "WebTech/1. Woche 13.10 - 19.10.md",
     "BuK/15. Vorlesung 06.12.22.md",
     "Auto Complete.md",
