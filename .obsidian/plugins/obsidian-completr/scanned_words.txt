@@ -100,6 +100,7 @@ Observer
 Observers
 Oftmals
 Objektorientierte
+Offline
 Rücksackproblem
 Rücksack
 Rucksackproblem
@@ -373,6 +374,9 @@ REpresentational
 Resourcen
 Restify
 Routing
+Refactoring
+Render
+Reduzierte
 objekten
 oder
 os
@@ -768,6 +772,8 @@ Gateway
 Geschäfts
 Globel
 GET
+Guter
+Geeignet
 und
 umgekehrte
 undefinierte
@@ -1398,6 +1404,9 @@ Webseiten
 Wurzelobjekt
 Wiederverwendung
 Webservice
+Weniger
+Webanwendungen
+Webclients
 Ein
 Eingabe
 Entschidungsvariante
@@ -1783,6 +1792,7 @@ Echtzeitdienste
 Enthält
 Eventually
 Einzelne
+Entkopplung
 rRücksack
 rekurtiven
 read
@@ -2047,6 +2057,7 @@ request
 readyState
 registriebar
 require
+rd
 mit
 maximiert
 mindestens
@@ -3011,6 +3022,13 @@ Skalierung
 Stattdessen
 Soft
 Schemata
+Support
+Sicheres
+SPA
+Serverlast
+Selbstständige
+Suchmaschienen
+SPAs
 eine
 einem
 ein
@@ -4103,6 +4121,7 @@ Threading
 Threads
 Tools
 TypeScript
+Traffic
 der
 dass
 die
@@ -4347,6 +4366,7 @@ dependencies
 devependencies
 duch
 documents
+development
 so
 sei
 sodass
@@ -5229,6 +5249,7 @@ schnellste
 skalierbar
 scripts
 simples
+sorry
 aus
 auf
 auch
@@ -5910,6 +5931,9 @@ automatisierten
 anonymen
 abstrakte
 arrays
+anpassbar
+automatisches
+abbildbar
 in
 ist
 ihre
@@ -6046,6 +6070,7 @@ img
 initalisiert
 innere
 implementiert
+ich
 passen
 proportional
 primitiv
@@ -6438,6 +6463,8 @@ NPM
 Net
 NOSQL
 NoSQL
+Nicht
+Nutzerzahlen
 wird
 werden
 wurden
@@ -7287,6 +7314,9 @@ BASE
 Basically
 BSON
 Binary
+Benutzung
+Backend
+Besteht
 Packing
 Problem
 Passen
@@ -7678,6 +7708,8 @@ Programmierparadigma
 Package
 POST
 PUT
+Plattformunabhängig
+Page
 jeweils
 jede
 jeder
@@ -8074,6 +8106,7 @@ VT
 Vielseitig
 Value
 Vermeidung
+Vorlesung
 kleineste
 kann
 können
@@ -8834,6 +8867,10 @@ Application
 ACID
 Atomarität
 Available
+APIs
+Applications
+Ausliefert
+Ab
 von
 vs
 verschwendet
@@ -10167,6 +10204,7 @@ Kooperatives
 Kompiliert
 Kopositionen
 Key
+Klassenbasierter
 gesucht
 gegeben
 gelöst
@@ -10619,6 +10657,7 @@ gut
 getElementbyClassName
 generisches
 geänderte
+gültiger
 Himiltonkreis
 Hilfe
 Häufig
@@ -11430,6 +11469,7 @@ Literal
 Lesbarkeit
 Locks
 Loading
+Lib
 Zielfunktion
 Zulässige
 Zeiteinheit
@@ -12213,6 +12253,8 @@ Facade
 Factory
 FP
 Funktionesaufrufe
+Frontend
+Full
 für
 funktioniert
 falls
@@ -12388,6 +12430,8 @@ finds
 factor
 fordert
 fs
+flüssig
+füge
 höchtens
 höhe
 häufig
@@ -12825,6 +12869,7 @@ lokal
 literal
 lastig
 license
+leicher
 Uniformes
 Untere
 Unterscheidliche
@@ -12969,6 +13014,7 @@ Unterstützt
 Utilities
 UDP
 Untersstützt
+UI
 Jeder
 Ja
 JTAG
@@ -13155,7 +13201,6 @@ Detlef
 Deutsch
 Deutschland
 Deutschlands
-Devise
 Dezember
 Diagnose
 Dialog
@@ -13776,6 +13821,7 @@ behind
 beobachteten
 basiertes
 blocking
+besprochen
 nichtdeterministisch
 nicht
 nur
@@ -14227,6 +14273,8 @@ time
 takes
 transparent
 title
+transpiliert
+toolkit
 charakteristische
 char
 control
@@ -14414,6 +14462,8 @@ Insellösung
 Industire
 Interaktion
 Isolation
+IDE
+Interfaces
 Critical
 COMPA
 Clock

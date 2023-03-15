@@ -3,5 +3,11 @@
   "obsidian-admonition",
   "obsidian-git",
   "obsidian-style-settings",
-  "obsidian-completr"
+  "obsidian-completr",
+  "obsidian-full-calendar",
+  "obsidian-to-anki-plugin",
+  "templater-obsidian",
+  "quickadd",
+  "dataview",
+  "periodic-notes"
 ]
