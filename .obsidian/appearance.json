@@ -1,6 +1,10 @@
 {
-  "accentColor": "",
+  "accentColor": "#8d6df8",
   "cssTheme": "Obsidianite",
   "theme": "obsidian",
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "snippets",
+    "marker"
+  ]
 }

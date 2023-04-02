@@ -175,3 +175,20 @@
 .qaFileSuggestionItem .suggestion-sub-text {
   font-style: italic;
 }
+.choiceListItem {
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  margin: 12px 0 0 0;
+  transition: 1000ms ease-in-out;
+}
+.choiceListItemName {
+  flex: 1 0 0;
+}
+.choiceListItemName p {
+  margin: 0;
+  display: inline;
+}
+.quickadd-choice-suggestion p {
+  margin: 0;
+}

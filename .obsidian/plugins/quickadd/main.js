@@ -543,10 +543,10 @@ __export(main_exports, {
   default: () => QuickAdd
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian31 = require("obsidian");
+var import_obsidian33 = require("obsidian");
 
 // src/quickAddSettingsTab.ts
-var import_obsidian27 = require("obsidian");
+var import_obsidian29 = require("obsidian");
 
 // node_modules/.pnpm/svelte@3.55.1/node_modules/svelte/internal/index.mjs
 function noop() {
@@ -2699,15 +2699,11 @@ var ChoiceItemRightButtons = class extends SvelteComponent {
 var ChoiceItemRightButtons_default = ChoiceItemRightButtons;
 
 // src/gui/choiceList/ChoiceListItem.svelte
-function add_css3(target) {
-  append_styles(target, "svelte-1vcfikc", ".choiceListItem.svelte-1vcfikc{display:flex;font-size:16px;align-items:center;margin:12px 0 0 0;transition:1000ms ease-in-out}.choiceListItemName.svelte-1vcfikc{flex:1 0 0}");
-}
+var import_obsidian = require("obsidian");
 function create_fragment7(ctx) {
   let div;
   let span;
-  let t0_value = ctx[0].name + "";
-  let t0;
-  let t1;
+  let t;
   let rightbuttons;
   let updating_choiceName;
   let updating_commandEnabled;
@@ -2715,16 +2711,16 @@ function create_fragment7(ctx) {
   let updating_dragDisabled;
   let current;
   function rightbuttons_choiceName_binding(value) {
-    ctx[7](value);
-  }
-  function rightbuttons_commandEnabled_binding(value) {
-    ctx[8](value);
-  }
-  function rightbuttons_showConfigureButton_binding(value) {
     ctx[9](value);
   }
-  function rightbuttons_dragDisabled_binding(value) {
+  function rightbuttons_commandEnabled_binding(value) {
     ctx[10](value);
+  }
+  function rightbuttons_showConfigureButton_binding(value) {
+    ctx[11](value);
+  }
+  function rightbuttons_dragDisabled_binding(value) {
+    ctx[12](value);
   }
   let rightbuttons_props = { showDuplicateButton: true };
   if (ctx[0].name !== void 0) {
@@ -2733,8 +2729,8 @@ function create_fragment7(ctx) {
   if (ctx[0].command !== void 0) {
     rightbuttons_props.commandEnabled = ctx[0].command;
   }
-  if (ctx[2] !== void 0) {
-    rightbuttons_props.showConfigureButton = ctx[2];
+  if (ctx[3] !== void 0) {
+    rightbuttons_props.showConfigureButton = ctx[3];
   }
   if (ctx[1] !== void 0) {
     rightbuttons_props.dragDisabled = ctx[1];
@@ -2744,33 +2740,30 @@ function create_fragment7(ctx) {
   binding_callbacks.push(() => bind(rightbuttons, "commandEnabled", rightbuttons_commandEnabled_binding));
   binding_callbacks.push(() => bind(rightbuttons, "showConfigureButton", rightbuttons_showConfigureButton_binding));
   binding_callbacks.push(() => bind(rightbuttons, "dragDisabled", rightbuttons_dragDisabled_binding));
-  rightbuttons.$on("mousedown", ctx[11]);
-  rightbuttons.$on("touchstart", ctx[12]);
-  rightbuttons.$on("deleteChoice", ctx[3]);
-  rightbuttons.$on("configureChoice", ctx[4]);
-  rightbuttons.$on("toggleCommand", ctx[5]);
-  rightbuttons.$on("duplicateChoice", ctx[6]);
+  rightbuttons.$on("mousedown", ctx[13]);
+  rightbuttons.$on("touchstart", ctx[14]);
+  rightbuttons.$on("deleteChoice", ctx[4]);
+  rightbuttons.$on("configureChoice", ctx[5]);
+  rightbuttons.$on("toggleCommand", ctx[6]);
+  rightbuttons.$on("duplicateChoice", ctx[7]);
   return {
     c() {
       div = element("div");
       span = element("span");
-      t0 = text(t0_value);
-      t1 = space();
+      t = space();
       create_component(rightbuttons.$$.fragment);
-      attr(span, "class", "choiceListItemName svelte-1vcfikc");
-      attr(div, "class", "choiceListItem svelte-1vcfikc");
+      attr(span, "class", "choiceListItemName");
+      attr(div, "class", "choiceListItem");
     },
     m(target, anchor) {
       insert(target, div, anchor);
       append(div, span);
-      append(span, t0);
-      append(div, t1);
+      ctx[8](span);
+      append(div, t);
       mount_component(rightbuttons, div, null);
       current = true;
     },
     p(ctx2, [dirty]) {
-      if ((!current || dirty & 1) && t0_value !== (t0_value = ctx2[0].name + ""))
-        set_data(t0, t0_value);
       const rightbuttons_changes = {};
       if (!updating_choiceName && dirty & 1) {
         updating_choiceName = true;
@@ -2782,9 +2775,9 @@ function create_fragment7(ctx) {
         rightbuttons_changes.commandEnabled = ctx2[0].command;
         add_flush_callback(() => updating_commandEnabled = false);
       }
-      if (!updating_showConfigureButton && dirty & 4) {
+      if (!updating_showConfigureButton && dirty & 8) {
         updating_showConfigureButton = true;
-        rightbuttons_changes.showConfigureButton = ctx2[2];
+        rightbuttons_changes.showConfigureButton = ctx2[3];
         add_flush_callback(() => updating_showConfigureButton = false);
       }
       if (!updating_dragDisabled && dirty & 2) {
@@ -2807,6 +2800,7 @@ function create_fragment7(ctx) {
     d(detaching) {
       if (detaching)
         detach(div);
+      ctx[8](null);
       destroy_component(rightbuttons);
     }
   };
@@ -2828,6 +2822,13 @@ function instance7($$self, $$props, $$invalidate) {
   function duplicateChoice() {
     dispatcher("duplicateChoice", { choice });
   }
+  let nameElement;
+  function span_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      nameElement = $$value;
+      $$invalidate(2, nameElement), $$invalidate(0, choice);
+    });
+  }
   function rightbuttons_choiceName_binding(value) {
     if ($$self.$$.not_equal(choice.name, value)) {
       choice.name = value;
@@ -2842,7 +2843,7 @@ function instance7($$self, $$props, $$invalidate) {
   }
   function rightbuttons_showConfigureButton_binding(value) {
     showConfigureButton = value;
-    $$invalidate(2, showConfigureButton);
+    $$invalidate(3, showConfigureButton);
   }
   function rightbuttons_dragDisabled_binding(value) {
     dragDisabled = value;
@@ -2860,14 +2861,27 @@ function instance7($$self, $$props, $$invalidate) {
     if ("dragDisabled" in $$props2)
       $$invalidate(1, dragDisabled = $$props2.dragDisabled);
   };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & 5) {
+      $: {
+        if (nameElement) {
+          $$invalidate(2, nameElement.innerHTML = "", nameElement);
+          const nameHTML = (0, import_obsidian.htmlToMarkdown)(choice.name);
+          import_obsidian.MarkdownRenderer.renderMarkdown(nameHTML, nameElement, "/", null);
+        }
+      }
+    }
+  };
   return [
     choice,
     dragDisabled,
+    nameElement,
     showConfigureButton,
     deleteChoice,
     configureChoice,
     toggleCommandForChoice,
     duplicateChoice,
+    span_binding,
     rightbuttons_choiceName_binding,
     rightbuttons_commandEnabled_binding,
     rightbuttons_showConfigureButton_binding,
@@ -2879,13 +2893,14 @@ function instance7($$self, $$props, $$invalidate) {
 var ChoiceListItem = class extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance7, create_fragment7, safe_not_equal, { choice: 0, dragDisabled: 1 }, add_css3);
+    init(this, options, instance7, create_fragment7, safe_not_equal, { choice: 0, dragDisabled: 1 });
   }
 };
 var ChoiceListItem_default = ChoiceListItem;
 
 // src/gui/choiceList/MultiChoiceListItem.svelte
-function add_css4(target) {
+var import_obsidian2 = require("obsidian");
+function add_css3(target) {
   append_styles(target, "svelte-na99np", ".multiChoiceListItem.svelte-na99np{display:flex;font-size:16px;align-items:center;margin:12px 0 0 0}.clickable.svelte-na99np:hover{cursor:pointer}.multiChoiceListItemName.svelte-na99np{flex:1 0 0;margin-left:5px}.nestedChoiceList.svelte-na99np{padding-left:25px}");
 }
 function create_if_block3(ctx) {
@@ -2950,10 +2965,10 @@ function create_if_block_13(ctx) {
   let updating_choices;
   let current;
   function choicelist_multiChoice_binding(value) {
-    ctx[15](value);
+    ctx[17](value);
   }
   function choicelist_choices_binding(value) {
-    ctx[16](value);
+    ctx[18](value);
   }
   let choicelist_props = {};
   if (ctx[0] !== void 0) {
@@ -2965,10 +2980,10 @@ function create_if_block_13(ctx) {
   choicelist = new ChoiceList_default({ props: choicelist_props });
   binding_callbacks.push(() => bind(choicelist, "multiChoice", choicelist_multiChoice_binding));
   binding_callbacks.push(() => bind(choicelist, "choices", choicelist_choices_binding));
-  choicelist.$on("deleteChoice", ctx[17]);
-  choicelist.$on("configureChoice", ctx[18]);
-  choicelist.$on("toggleCommand", ctx[19]);
-  choicelist.$on("duplicateChoice", ctx[20]);
+  choicelist.$on("deleteChoice", ctx[19]);
+  choicelist.$on("configureChoice", ctx[20]);
+  choicelist.$on("toggleCommand", ctx[21]);
+  choicelist.$on("duplicateChoice", ctx[22]);
   return {
     c() {
       div = element("div");
@@ -3018,15 +3033,13 @@ function create_fragment8(ctx) {
   let icon;
   let t0;
   let span;
-  let t1_value = ctx[0].name + "";
   let t1;
-  let t2;
   let rightbuttons;
   let updating_showConfigureButton;
   let updating_dragDisabled;
   let updating_choiceName;
   let updating_commandEnabled;
-  let t3;
+  let t2;
   let current;
   let mounted;
   let dispose;
@@ -3037,20 +3050,20 @@ function create_fragment8(ctx) {
     }
   });
   function rightbuttons_showConfigureButton_binding(value) {
-    ctx[9](value);
-  }
-  function rightbuttons_dragDisabled_binding(value) {
-    ctx[10](value);
-  }
-  function rightbuttons_choiceName_binding(value) {
     ctx[11](value);
   }
-  function rightbuttons_commandEnabled_binding(value) {
+  function rightbuttons_dragDisabled_binding(value) {
     ctx[12](value);
   }
+  function rightbuttons_choiceName_binding(value) {
+    ctx[13](value);
+  }
+  function rightbuttons_commandEnabled_binding(value) {
+    ctx[14](value);
+  }
   let rightbuttons_props = { showDuplicateButton: true };
-  if (ctx[3] !== void 0) {
-    rightbuttons_props.showConfigureButton = ctx[3];
+  if (ctx[4] !== void 0) {
+    rightbuttons_props.showConfigureButton = ctx[4];
   }
   if (ctx[1] !== void 0) {
     rightbuttons_props.dragDisabled = ctx[1];
@@ -3066,12 +3079,12 @@ function create_fragment8(ctx) {
   binding_callbacks.push(() => bind(rightbuttons, "dragDisabled", rightbuttons_dragDisabled_binding));
   binding_callbacks.push(() => bind(rightbuttons, "choiceName", rightbuttons_choiceName_binding));
   binding_callbacks.push(() => bind(rightbuttons, "commandEnabled", rightbuttons_commandEnabled_binding));
-  rightbuttons.$on("mousedown", ctx[13]);
-  rightbuttons.$on("touchstart", ctx[14]);
-  rightbuttons.$on("deleteChoice", ctx[4]);
-  rightbuttons.$on("configureChoice", ctx[5]);
-  rightbuttons.$on("toggleCommand", ctx[6]);
-  rightbuttons.$on("duplicateChoice", ctx[7]);
+  rightbuttons.$on("mousedown", ctx[15]);
+  rightbuttons.$on("touchstart", ctx[16]);
+  rightbuttons.$on("deleteChoice", ctx[5]);
+  rightbuttons.$on("configureChoice", ctx[6]);
+  rightbuttons.$on("toggleCommand", ctx[7]);
+  rightbuttons.$on("duplicateChoice", ctx[8]);
   let if_block = (!ctx[2] || ctx[2] && ctx[0].id !== ctx[2]) && create_if_block3(ctx);
   return {
     c() {
@@ -3081,12 +3094,12 @@ function create_fragment8(ctx) {
       create_component(icon.$$.fragment);
       t0 = space();
       span = element("span");
-      t1 = text(t1_value);
-      t2 = space();
+      t1 = space();
       create_component(rightbuttons.$$.fragment);
-      t3 = space();
+      t2 = space();
       if (if_block)
         if_block.c();
+      attr(span, "class", "choiceListItemName");
       attr(div0, "class", "multiChoiceListItemName clickable svelte-na99np");
       attr(div1, "class", "multiChoiceListItem svelte-na99np");
     },
@@ -3097,15 +3110,15 @@ function create_fragment8(ctx) {
       mount_component(icon, div0, null);
       append(div0, t0);
       append(div0, span);
-      append(span, t1);
-      append(div1, t2);
+      ctx[9](span);
+      append(div1, t1);
       mount_component(rightbuttons, div1, null);
-      append(div2, t3);
+      append(div2, t2);
       if (if_block)
         if_block.m(div2, null);
       current = true;
       if (!mounted) {
-        dispose = listen(div0, "click", ctx[8]);
+        dispose = listen(div0, "click", ctx[10]);
         mounted = true;
       }
     },
@@ -3114,12 +3127,10 @@ function create_fragment8(ctx) {
       if (dirty & 1)
         icon_changes.style = `transform:rotate(${ctx2[0].collapsed ? -180 : 0}deg)`;
       icon.$set(icon_changes);
-      if ((!current || dirty & 1) && t1_value !== (t1_value = ctx2[0].name + ""))
-        set_data(t1, t1_value);
       const rightbuttons_changes = {};
-      if (!updating_showConfigureButton && dirty & 8) {
+      if (!updating_showConfigureButton && dirty & 16) {
         updating_showConfigureButton = true;
-        rightbuttons_changes.showConfigureButton = ctx2[3];
+        rightbuttons_changes.showConfigureButton = ctx2[4];
         add_flush_callback(() => updating_showConfigureButton = false);
       }
       if (!updating_dragDisabled && dirty & 2) {
@@ -3176,6 +3187,7 @@ function create_fragment8(ctx) {
       if (detaching)
         detach(div2);
       destroy_component(icon);
+      ctx[9](null);
       destroy_component(rightbuttons);
       if (if_block)
         if_block.d();
@@ -3202,10 +3214,17 @@ function instance8($$self, $$props, $$invalidate) {
   function duplicateChoice() {
     dispatcher("duplicateChoice", { choice });
   }
+  let nameElement;
+  function span_binding($$value) {
+    binding_callbacks[$$value ? "unshift" : "push"](() => {
+      nameElement = $$value;
+      $$invalidate(3, nameElement), $$invalidate(0, choice);
+    });
+  }
   const click_handler = () => $$invalidate(0, choice.collapsed = !choice.collapsed, choice);
   function rightbuttons_showConfigureButton_binding(value) {
     showConfigureButton = value;
-    $$invalidate(3, showConfigureButton);
+    $$invalidate(4, showConfigureButton);
   }
   function rightbuttons_dragDisabled_binding(value) {
     dragDisabled = value;
@@ -3259,15 +3278,28 @@ function instance8($$self, $$props, $$invalidate) {
     if ("dragDisabled" in $$props2)
       $$invalidate(1, dragDisabled = $$props2.dragDisabled);
   };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & 9) {
+      $: {
+        if (nameElement) {
+          $$invalidate(3, nameElement.innerHTML = "", nameElement);
+          const nameHTML = (0, import_obsidian2.htmlToMarkdown)(choice.name);
+          import_obsidian2.MarkdownRenderer.renderMarkdown(nameHTML, nameElement, "/", null);
+        }
+      }
+    }
+  };
   return [
     choice,
     dragDisabled,
     collapseId,
+    nameElement,
     showConfigureButton,
     deleteChoice,
     configureChoice,
     toggleCommandForChoice,
     duplicateChoice,
+    span_binding,
     click_handler,
     rightbuttons_showConfigureButton_binding,
     rightbuttons_dragDisabled_binding,
@@ -3297,7 +3329,7 @@ var MultiChoiceListItem = class extends SvelteComponent {
         collapseId: 2,
         dragDisabled: 1
       },
-      add_css4
+      add_css3
     );
   }
 };
@@ -4801,7 +4833,7 @@ function isInt(value) {
 }
 
 // src/gui/choiceList/ChoiceList.svelte
-function add_css5(target) {
+function add_css4(target) {
   append_styles(target, "svelte-jb273g", ".choiceList.svelte-jb273g{width:auto;border:0 solid black;overflow-y:auto;height:auto}");
 }
 function get_each_context2(ctx, list, i) {
@@ -5214,14 +5246,14 @@ function instance9($$self, $$props, $$invalidate) {
 var ChoiceList = class extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance9, create_fragment9, safe_not_equal, { choices: 0 }, add_css5);
+    init(this, options, instance9, create_fragment9, safe_not_equal, { choices: 0 }, add_css4);
   }
 };
 var ChoiceList_default = ChoiceList;
 
 // src/gui/choiceList/AddChoiceBox.svelte
-var import_obsidian = require("obsidian");
-function add_css6(target) {
+var import_obsidian3 = require("obsidian");
+function add_css5(target) {
   append_styles(target, "svelte-1newuee", ".addChoiceBox.svelte-1newuee{margin-top:1em;display:flex;flex-direction:row;align-items:center;gap:10px;justify-content:center}@media(max-width: 800px){.addChoiceBox.svelte-1newuee{flex-direction:column}}#addChoiceTypeSelector.svelte-1newuee{font-size:16px;padding:3px;border-radius:3px}");
 }
 function create_fragment10(ctx) {
@@ -5333,7 +5365,7 @@ function instance10($$self, $$props, $$invalidate) {
   const dispatch = createEventDispatcher();
   function addChoice() {
     if (!name) {
-      new import_obsidian.Notice("Choice name is invalid.");
+      new import_obsidian3.Notice("Choice name is invalid.");
       return;
     }
     dispatch("addChoice", { name, type });
@@ -5352,7 +5384,7 @@ function instance10($$self, $$props, $$invalidate) {
 var AddChoiceBox = class extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance10, create_fragment10, safe_not_equal, {}, add_css6);
+    init(this, options, instance10, create_fragment10, safe_not_equal, {}, add_css5);
   }
 };
 var AddChoiceBox_default = AddChoiceBox;
@@ -5504,8 +5536,8 @@ var MultiChoice = class extends Choice {
 };
 
 // src/gui/GenericYesNoPrompt/GenericYesNoPrompt.ts
-var import_obsidian2 = require("obsidian");
-var GenericYesNoPrompt = class extends import_obsidian2.Modal {
+var import_obsidian4 = require("obsidian");
+var GenericYesNoPrompt = class extends import_obsidian4.Modal {
   constructor(app2, header, text2) {
     super(app2);
     this.header = header;
@@ -5530,8 +5562,8 @@ var GenericYesNoPrompt = class extends import_obsidian2.Modal {
     const buttonsDiv = this.contentEl.createDiv({
       cls: "yesNoPromptButtonContainer"
     });
-    new import_obsidian2.ButtonComponent(buttonsDiv).setButtonText("No").onClick(() => this.submit(false));
-    const yesButton = new import_obsidian2.ButtonComponent(buttonsDiv).setButtonText("Yes").onClick(() => this.submit(true)).setWarning();
+    new import_obsidian4.ButtonComponent(buttonsDiv).setButtonText("No").onClick(() => this.submit(false));
+    const yesButton = new import_obsidian4.ButtonComponent(buttonsDiv).setButtonText("Yes").onClick(() => this.submit(true)).setWarning();
     yesButton.buttonEl.focus();
   }
   submit(input) {
@@ -5549,16 +5581,16 @@ var GenericYesNoPrompt = class extends import_obsidian2.Modal {
 };
 
 // src/gui/choiceList/ChoiceView.svelte
-var import_obsidian26 = require("obsidian");
+var import_obsidian28 = require("obsidian");
 
 // src/gui/ChoiceBuilder/choiceBuilder.ts
-var import_obsidian5 = require("obsidian");
+var import_obsidian7 = require("obsidian");
 
 // src/gui/GenericInputPrompt/GenericInputPrompt.ts
-var import_obsidian4 = require("obsidian");
+var import_obsidian6 = require("obsidian");
 
 // src/gui/suggesters/suggest.ts
-var import_obsidian3 = require("obsidian");
+var import_obsidian5 = require("obsidian");
 
 // node_modules/.pnpm/@popperjs+core@2.11.6/node_modules/@popperjs/core/lib/enums.js
 var top = "top";
@@ -7216,7 +7248,7 @@ var TextInputSuggest = class {
   constructor(app2, inputEl) {
     this.app = app2;
     this.inputEl = inputEl;
-    this.scope = new import_obsidian3.Scope();
+    this.scope = new import_obsidian5.Scope();
     this.suggestEl = createDiv("suggestion-container");
     const suggestion = this.suggestEl.createDiv("suggestion");
     this.suggest = new Suggest(this, suggestion, this.scope);
@@ -8917,7 +8949,7 @@ var SilentTagSuggester = class extends TextInputSuggest {
 };
 
 // src/gui/GenericInputPrompt/GenericInputPrompt.ts
-var GenericInputPrompt = class extends import_obsidian4.Modal {
+var GenericInputPrompt = class extends import_obsidian6.Modal {
   constructor(app2, header, placeholder, value) {
     super(app2);
     this.header = header;
@@ -8969,13 +9001,13 @@ var GenericInputPrompt = class extends import_obsidian4.Modal {
     this.createButtonBar(mainContentContainer);
   }
   createInputField(container, placeholder, value) {
-    const textComponent = new import_obsidian4.TextComponent(container);
+    const textComponent = new import_obsidian6.TextComponent(container);
     textComponent.inputEl.style.width = "100%";
     textComponent.setPlaceholder(placeholder != null ? placeholder : "").setValue(value != null ? value : "").onChange((value2) => this.input = value2).inputEl.addEventListener("keydown", this.submitEnterCallback);
     return textComponent;
   }
   createButton(container, text2, callback) {
-    const btn = new import_obsidian4.ButtonComponent(container);
+    const btn = new import_obsidian6.ButtonComponent(container);
     btn.setButtonText(text2).onClick(callback);
     return btn;
   }
@@ -9079,7 +9111,7 @@ var GenericTextSuggester = class extends TextInputSuggest {
 };
 
 // src/gui/ChoiceBuilder/choiceBuilder.ts
-var ChoiceBuilder = class extends import_obsidian5.Modal {
+var ChoiceBuilder = class extends import_obsidian7.Modal {
   constructor(app2) {
     super(app2);
     this.didSubmit = false;
@@ -9146,10 +9178,10 @@ var ChoiceBuilder = class extends import_obsidian5.Modal {
 };
 
 // src/gui/ChoiceBuilder/templateChoiceBuilder.ts
-var import_obsidian7 = require("obsidian");
+var import_obsidian9 = require("obsidian");
 
 // src/gui/ChoiceBuilder/FolderList.svelte
-function add_css7(target) {
+function add_css6(target) {
   append_styles(target, "svelte-tuapcq", ".quickAddCommandListItem.svelte-tuapcq{display:flex;align-items:center;justify-content:space-between}@media(min-width: 768px){.quickAddFolderListGrid.svelte-tuapcq{display:grid;grid-template-columns:repeat(2, 1fr);column-gap:20px}}.quickAddCommandList.svelte-tuapcq{max-width:50%;margin:12px auto}.clickable.svelte-tuapcq{cursor:pointer}");
 }
 function get_each_context3(ctx, list, i) {
@@ -9324,7 +9356,7 @@ var FolderList = class extends SvelteComponent {
         deleteFolder: 1,
         updateFolders: 2
       },
-      add_css7
+      add_css6
     );
   }
   get updateFolders() {
@@ -9334,7 +9366,7 @@ var FolderList = class extends SvelteComponent {
 var FolderList_default = FolderList;
 
 // src/utility.ts
-var import_obsidian6 = require("obsidian");
+var import_obsidian8 = require("obsidian");
 function getTemplater(app2) {
   return app2.plugins.plugins["templater-obsidian"];
 }
@@ -9368,7 +9400,7 @@ function getDate(input) {
 }
 function appendToCurrentLine(toAppend, app2) {
   try {
-    const activeView = app2.workspace.getActiveViewOfType(import_obsidian6.MarkdownView);
+    const activeView = app2.workspace.getActiveViewOfType(import_obsidian8.MarkdownView);
     if (!activeView) {
       log.logError(`unable to append '${toAppend}' to current line.`);
       return;
@@ -9388,7 +9420,7 @@ function deleteObsidianCommand(app2, commandId) {
   }
 }
 function getAllFolderPathsInVault(app2) {
-  return app2.vault.getAllLoadedFiles().filter((f) => f instanceof import_obsidian6.TFolder).map((folder) => folder.path);
+  return app2.vault.getAllLoadedFiles().filter((f) => f instanceof import_obsidian8.TFolder).map((folder) => folder.path);
 }
 function getUserScriptMemberAccess(fullMemberPath) {
   const fullMemberArray = fullMemberPath.split("::");
@@ -9442,7 +9474,7 @@ async function getUserScript(command, app2) {
     log.logError(`failed to load file ${command.path}.`);
     return;
   }
-  if (file instanceof import_obsidian6.TFile) {
+  if (file instanceof import_obsidian8.TFile) {
     const req = (s) => window.require && window.require(s);
     const exp = {};
     const mod = { exports: exp };
@@ -9941,7 +9973,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
       this.addOpenFileInNewTabSetting();
   }
   addTemplatePathSetting() {
-    new import_obsidian7.Setting(this.contentEl).setName("Template Path").setDesc("Path to the Template.").addSearch((search2) => {
+    new import_obsidian9.Setting(this.contentEl).setName("Template Path").setDesc("Path to the Template.").addSearch((search2) => {
       const templates = this.plugin.getTemplateFiles().map((f) => f.path);
       search2.setValue(this.choice.templatePath);
       search2.setPlaceholder("Template path");
@@ -9953,7 +9985,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
   }
   addFileNameFormatSetting() {
     let textField;
-    const enableSetting = new import_obsidian7.Setting(this.contentEl);
+    const enableSetting = new import_obsidian9.Setting(this.contentEl);
     enableSetting.setName("File Name Format").setDesc("Set the file name format.").addToggle((toggleComponent) => {
       toggleComponent.setValue(this.choice.fileNameFormat.enabled).onChange((value) => {
         this.choice.fileNameFormat.enabled = value;
@@ -9965,7 +9997,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
     (async () => formatDisplay.textContent = await displayFormatter.format(
       this.choice.fileNameFormat.format
     ))();
-    const formatInput = new import_obsidian7.TextComponent(this.contentEl);
+    const formatInput = new import_obsidian9.TextComponent(this.contentEl);
     formatInput.setPlaceholder("File name format");
     textField = formatInput;
     formatInput.inputEl.style.width = "100%";
@@ -9985,7 +10017,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
   }
   addFolderSetting() {
     var _a, _b, _c, _d;
-    const folderSetting = new import_obsidian7.Setting(this.contentEl);
+    const folderSetting = new import_obsidian9.Setting(this.contentEl);
     folderSetting.setName("Create in folder").setDesc(
       "Create the file in the specified folder. If multiple folders are specified, you will be prompted for which folder to create the file in."
     ).addToggle((toggle) => {
@@ -10005,7 +10037,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
       chooseFolderWhenCreatingNoteContainer.createEl("span", {
         text: "Choose folder when creating a new note"
       });
-      const chooseFolderWhenCreatingNote = new import_obsidian7.ToggleComponent(chooseFolderWhenCreatingNoteContainer);
+      const chooseFolderWhenCreatingNote = new import_obsidian9.ToggleComponent(chooseFolderWhenCreatingNoteContainer);
       chooseFolderWhenCreatingNote.setValue((_b = this.choice.folder) == null ? void 0 : _b.chooseWhenCreatingNote).onChange((value) => {
         this.choice.folder.chooseWhenCreatingNote = value;
         this.reload();
@@ -10014,7 +10046,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
         this.addFolderSelector();
       }
       const chooseFolderFromSubfolderContainer = this.contentEl.createDiv("chooseFolderFromSubfolderContainer");
-      const stn = new import_obsidian7.Setting(chooseFolderFromSubfolderContainer);
+      const stn = new import_obsidian9.Setting(chooseFolderFromSubfolderContainer);
       stn.setName("Include subfolders").setDesc(
         "Get prompted to choose from both the selected folders and their subfolders when creating the note."
       ).addToggle(
@@ -10028,7 +10060,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
       );
     }
     if (!((_d = this.choice.folder) == null ? void 0 : _d.chooseWhenCreatingNote)) {
-      const createInSameFolderAsActiveFileSetting = new import_obsidian7.Setting(
+      const createInSameFolderAsActiveFileSetting = new import_obsidian9.Setting(
         this.contentEl
       );
       createInSameFolderAsActiveFileSetting.setName("Create in same folder as active file").setDesc(
@@ -10064,7 +10096,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
     const inputContainer = folderSelectionContainer.createDiv(
       "folderInputContainer"
     );
-    const folderInput = new import_obsidian7.TextComponent(inputContainer);
+    const folderInput = new import_obsidian9.TextComponent(inputContainer);
     folderInput.inputEl.style.width = "100%";
     folderInput.setPlaceholder("Folder path");
     const allFolders = getAllFolderPathsInVault(this.app);
@@ -10090,20 +10122,20 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
         addFolder();
       }
     });
-    const addButton = new import_obsidian7.ButtonComponent(inputContainer);
+    const addButton = new import_obsidian9.ButtonComponent(inputContainer);
     addButton.setCta().setButtonText("Add").onClick((evt) => {
       addFolder();
     });
   }
   addAppendLinkSetting() {
-    const appendLinkSetting = new import_obsidian7.Setting(this.contentEl);
+    const appendLinkSetting = new import_obsidian9.Setting(this.contentEl);
     appendLinkSetting.setName("Append link").setDesc("Append link to created file to current file.").addToggle((toggle) => {
       toggle.setValue(this.choice.appendLink);
       toggle.onChange((value) => this.choice.appendLink = value);
     });
   }
   addFileAlreadyExistsSetting() {
-    const fileAlreadyExistsSetting = new import_obsidian7.Setting(this.contentEl);
+    const fileAlreadyExistsSetting = new import_obsidian9.Setting(this.contentEl);
     fileAlreadyExistsSetting.setName("Set default behavior if file already exists").setDesc(
       "Set default behavior rather then prompting user on what to do if a file already exists."
     ).addToggle((toggle) => {
@@ -10124,7 +10156,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
     });
   }
   addOpenFileSetting() {
-    const noOpenSetting = new import_obsidian7.Setting(this.contentEl);
+    const noOpenSetting = new import_obsidian9.Setting(this.contentEl);
     noOpenSetting.setName("Open").setDesc("Open the created file.").addToggle((toggle) => {
       toggle.setValue(this.choice.openFile);
       toggle.onChange((value) => {
@@ -10141,7 +10173,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
     });
   }
   addOpenFileInNewTabSetting() {
-    const newTabSetting = new import_obsidian7.Setting(this.contentEl);
+    const newTabSetting = new import_obsidian9.Setting(this.contentEl);
     newTabSetting.setName("New split").setDesc("Split your editor and open file in new split.").addToggle((toggle) => {
       toggle.setValue(this.choice.openFileInNewTab.enabled);
       toggle.onChange(
@@ -10156,7 +10188,7 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
         (value) => this.choice.openFileInNewTab.direction = value
       );
     });
-    new import_obsidian7.Setting(this.contentEl).setName("Focus new pane").setDesc("Focus the opened tab immediately after opening").addToggle(
+    new import_obsidian9.Setting(this.contentEl).setName("Focus new pane").setDesc("Focus the opened tab immediately after opening").addToggle(
       (toggle) => toggle.setValue(this.choice.openFileInNewTab.focus).onChange(
         (value) => this.choice.openFileInNewTab.focus = value
       )
@@ -10165,10 +10197,10 @@ var TemplateChoiceBuilder = class extends ChoiceBuilder {
 };
 
 // src/gui/ChoiceBuilder/captureChoiceBuilder.ts
-var import_obsidian20 = require("obsidian");
+var import_obsidian22 = require("obsidian");
 
 // src/engine/QuickAddEngine.ts
-var import_obsidian8 = require("obsidian");
+var import_obsidian10 = require("obsidian");
 var QuickAddEngine = class {
   constructor(app2) {
     this.app = app2;
@@ -10196,11 +10228,11 @@ var QuickAddEngine = class {
       log.logError(`${filePath} not found`);
       throw new Error(`${filePath} not found`);
     }
-    if (file instanceof import_obsidian8.TFolder) {
+    if (file instanceof import_obsidian10.TFolder) {
       log.logError(`${filePath} found but it's a folder`);
       throw new Error(`${filePath} found but it's a folder`);
     }
-    if (!(file instanceof import_obsidian8.TFile))
+    if (!(file instanceof import_obsidian10.TFile))
       throw new Error(`${filePath} is not a file`);
     return file;
   }
@@ -10219,8 +10251,8 @@ var QuickAddEngine = class {
 };
 
 // src/gui/GenericSuggester/genericSuggester.ts
-var import_obsidian9 = require("obsidian");
-var GenericSuggester = class extends import_obsidian9.FuzzySuggestModal {
+var import_obsidian11 = require("obsidian");
+var GenericSuggester = class extends import_obsidian11.FuzzySuggestModal {
   constructor(app2, displayItems, items) {
     super(app2);
     this.displayItems = displayItems;
@@ -10269,8 +10301,8 @@ var GenericSuggester = class extends import_obsidian9.FuzzySuggestModal {
 var obsidian = __toESM(require("obsidian"));
 
 // src/gui/GenericInfoDialog/GenericInfoDialog.ts
-var import_obsidian10 = require("obsidian");
-var GenericInfoDialog = class extends import_obsidian10.Modal {
+var import_obsidian12 = require("obsidian");
+var GenericInfoDialog = class extends import_obsidian12.Modal {
   constructor(app2, header, text2) {
     super(app2);
     this.header = header;
@@ -10293,7 +10325,7 @@ var GenericInfoDialog = class extends import_obsidian10.Modal {
     else if (Array.isArray(this.text))
       this.text.forEach((line) => this.contentEl.createEl("p", { text: line }));
     const buttonsDiv = this.contentEl.createDiv();
-    const noButton = new import_obsidian10.ButtonComponent(buttonsDiv).setButtonText("OK").onClick(() => this.close());
+    const noButton = new import_obsidian12.ButtonComponent(buttonsDiv).setButtonText("OK").onClick(() => this.close());
     Object.assign(buttonsDiv.style, {
       "display": "flex",
       "justifyContent": "flex-end"
@@ -10307,8 +10339,8 @@ var GenericInfoDialog = class extends import_obsidian10.Modal {
 };
 
 // src/gui/GenericCheckboxPrompt/genericCheckboxPrompt.ts
-var import_obsidian11 = require("obsidian");
-var GenericCheckboxPrompt = class extends import_obsidian11.Modal {
+var import_obsidian13 = require("obsidian");
+var GenericCheckboxPrompt = class extends import_obsidian13.Modal {
   constructor(app2, items, selectedItems = []) {
     super(app2);
     this.items = items;
@@ -10351,7 +10383,7 @@ var GenericCheckboxPrompt = class extends import_obsidian11.Modal {
     checkboxRow.createEl("span", {
       text: item
     });
-    const checkbox = new import_obsidian11.ToggleComponent(checkboxRow);
+    const checkbox = new import_obsidian13.ToggleComponent(checkboxRow);
     checkbox.setTooltip(`Toggle ${item}`).setValue(this._selectedItems.contains(item)).onChange((value) => {
       if (value)
         this._selectedItems.push(item);
@@ -10367,7 +10399,7 @@ var GenericCheckboxPrompt = class extends import_obsidian11.Modal {
     const submitButtonContainer = this.contentEl.createDiv(
       "submitButtonContainer"
     );
-    const submitButton = new import_obsidian11.ButtonComponent(
+    const submitButton = new import_obsidian13.ButtonComponent(
       submitButtonContainer
     );
     submitButton.setButtonText("Submit").setCta().onClick((evt) => {
@@ -10379,11 +10411,11 @@ var GenericCheckboxPrompt = class extends import_obsidian11.Modal {
 };
 
 // src/quickAddApi.ts
-var import_obsidian13 = require("obsidian");
+var import_obsidian15 = require("obsidian");
 
 // src/gui/GenericWideInputPrompt/GenericWideInputPrompt.ts
-var import_obsidian12 = require("obsidian");
-var GenericWideInputPrompt = class extends import_obsidian12.Modal {
+var import_obsidian14 = require("obsidian");
+var GenericWideInputPrompt = class extends import_obsidian14.Modal {
   constructor(app2, header, placeholder, value) {
     super(app2);
     this.header = header;
@@ -10435,13 +10467,13 @@ var GenericWideInputPrompt = class extends import_obsidian12.Modal {
     this.createButtonBar(mainContentContainer);
   }
   createInputField(container, placeholder, value) {
-    const textComponent = new import_obsidian12.TextAreaComponent(container);
+    const textComponent = new import_obsidian14.TextAreaComponent(container);
     textComponent.inputEl.classList.add("wideInputPromptInputEl");
     textComponent.setPlaceholder(placeholder != null ? placeholder : "").setValue(value != null ? value : "").onChange((value2) => this.input = value2).inputEl.addEventListener("keydown", this.submitEnterCallback);
     return textComponent;
   }
   createButton(container, text2, callback) {
-    const btn = new import_obsidian12.ButtonComponent(container);
+    const btn = new import_obsidian14.ButtonComponent(container);
     btn.setButtonText(text2).onClick(callback);
     return btn;
   }
@@ -10549,7 +10581,7 @@ var QuickAddApi = class {
           return await navigator.clipboard.writeText(text2);
         },
         getSelectedText: () => {
-          const activeView = app2.workspace.getActiveViewOfType(import_obsidian13.MarkdownView);
+          const activeView = app2.workspace.getActiveViewOfType(import_obsidian15.MarkdownView);
           if (!activeView) {
             log.logError(
               "no active view - could not get selected text."
@@ -10654,7 +10686,7 @@ var Command = class {
 };
 
 // src/types/macros/EditorCommands/EditorCommand.ts
-var import_obsidian14 = require("obsidian");
+var import_obsidian16 = require("obsidian");
 var EditorCommand = class extends Command {
   constructor(type) {
     super(type, "EditorCommand" /* EditorCommand */);
@@ -10664,7 +10696,7 @@ var EditorCommand = class extends Command {
     return this.getActiveMarkdownView(app2).editor.getSelection();
   }
   static getActiveMarkdownView(app2) {
-    const activeView = app2.workspace.getActiveViewOfType(import_obsidian14.MarkdownView);
+    const activeView = app2.workspace.getActiveViewOfType(import_obsidian16.MarkdownView);
     if (!activeView) {
       log.logError("no active markdown view.");
       throw new Error("no active markdown view.");
@@ -10953,7 +10985,7 @@ var SingleMacroEngine = class extends MacroChoiceEngine {
 };
 
 // src/formatters/completeFormatter.ts
-var import_obsidian18 = require("obsidian");
+var import_obsidian20 = require("obsidian");
 
 // src/engine/SingleInlineScriptEngine.ts
 var SingleInlineScriptEngine = class extends MacroChoiceEngine {
@@ -10971,7 +11003,7 @@ var SingleInlineScriptEngine = class extends MacroChoiceEngine {
 };
 
 // src/gui/MathModal.ts
-var import_obsidian16 = require("obsidian");
+var import_obsidian18 = require("obsidian");
 
 // src/LaTeXSymbols.ts
 var LATEX_CURSOR_MOVE_HERE = "\u261A";
@@ -11745,7 +11777,7 @@ ${LATEX_CURSOR_MOVE_HERE}
 var LaTeXSymbols = [...commands, ...environments.map(beginEndGen)];
 
 // src/gui/suggesters/LaTeXSuggester.ts
-var import_obsidian15 = require("obsidian");
+var import_obsidian17 = require("obsidian");
 var LATEX_REGEX = new RegExp(/\\([a-z{}A-Z0-9]*)$/);
 var LaTeXSuggester = class extends TextInputSuggest {
   constructor(inputEl) {
@@ -11755,7 +11787,7 @@ var LaTeXSuggester = class extends TextInputSuggest {
     this.symbols = Object.assign([], LaTeXSymbols);
     this.elementsRendered = this.symbols.reduce((elements, symbol) => {
       try {
-        elements[symbol.toString()] = (0, import_obsidian15.renderMath)(symbol, true);
+        elements[symbol.toString()] = (0, import_obsidian17.renderMath)(symbol, true);
       } catch (e) {
       }
       return elements;
@@ -11824,7 +11856,7 @@ var LaTeXSuggester = class extends TextInputSuggest {
 };
 
 // src/gui/MathModal.ts
-var MathModal = class extends import_obsidian16.Modal {
+var MathModal = class extends import_obsidian18.Modal {
   constructor() {
     super(QuickAdd.instance.app);
     this.didSubmit = false;
@@ -11857,12 +11889,12 @@ var MathModal = class extends import_obsidian16.Modal {
     this.contentEl.empty();
     const mathDiv = this.contentEl.createDiv();
     mathDiv.className = "math math-block is-loaded";
-    const tc = new import_obsidian16.TextAreaComponent(this.contentEl);
+    const tc = new import_obsidian18.TextAreaComponent(this.contentEl);
     tc.inputEl.style.width = "100%";
     tc.inputEl.style.height = "10rem";
     this.inputEl = tc.inputEl;
     tc.onChange(
-      (0, import_obsidian16.debounce)(
+      (0, import_obsidian18.debounce)(
         async (value) => await this.mathjaxLoop(mathDiv, value),
         50
       )
@@ -11872,11 +11904,11 @@ var MathModal = class extends import_obsidian16.Modal {
   }
   async onOpen() {
     super.onOpen();
-    await (0, import_obsidian16.loadMathJax)();
+    await (0, import_obsidian18.loadMathJax)();
   }
   async mathjaxLoop(container, value) {
-    const html = (0, import_obsidian16.renderMath)(value, true);
-    await (0, import_obsidian16.finishRenderMath)();
+    const html = (0, import_obsidian18.renderMath)(value, true);
+    await (0, import_obsidian18.finishRenderMath)();
     container.empty();
     container.append(html);
   }
@@ -11893,7 +11925,7 @@ var MathModal = class extends import_obsidian16.Modal {
     }
   }
   createButton(container, text2, callback) {
-    const btn = new import_obsidian16.ButtonComponent(container);
+    const btn = new import_obsidian18.ButtonComponent(container);
     btn.setButtonText(text2).onClick(callback);
     return btn;
   }
@@ -11950,8 +11982,8 @@ var InputPrompt = class {
 };
 
 // src/gui/InputSuggester/inputSuggester.ts
-var import_obsidian17 = require("obsidian");
-var InputSuggester = class extends import_obsidian17.FuzzySuggestModal {
+var import_obsidian19 = require("obsidian");
+var InputSuggester = class extends import_obsidian19.FuzzySuggestModal {
   constructor(app2, displayItems, items) {
     super(app2);
     this.displayItems = displayItems;
@@ -12118,7 +12150,7 @@ var CompleteFormatter = class extends Formatter {
     ).run();
   }
   async getSelectedText() {
-    const activeView = this.app.workspace.getActiveViewOfType(import_obsidian18.MarkdownView);
+    const activeView = this.app.workspace.getActiveViewOfType(import_obsidian20.MarkdownView);
     if (!activeView)
       return "";
     return activeView.editor.getSelection();
@@ -12148,7 +12180,7 @@ var CompleteFormatter = class extends Formatter {
 };
 
 // src/engine/TemplateEngine.ts
-var import_obsidian19 = require("obsidian");
+var import_obsidian21 = require("obsidian");
 var TemplateEngine = class extends QuickAddEngine {
   constructor(app2, plugin, choiceFormatter) {
     super(app2);
@@ -12261,7 +12293,7 @@ ${formattedTemplateContent}`;
     if (!MARKDOWN_FILE_EXTENSION_REGEX.test(templatePath))
       correctTemplatePath += ".md";
     const templateFile = this.app.vault.getAbstractFileByPath(correctTemplatePath);
-    if (!(templateFile instanceof import_obsidian19.TFile))
+    if (!(templateFile instanceof import_obsidian21.TFile))
       throw new Error(
         `Template file not found at path "${correctTemplatePath}".`
       );
@@ -12387,12 +12419,12 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
   addCapturedToSetting() {
     var _a, _b, _c;
     let textField;
-    new import_obsidian20.Setting(this.contentEl).setName("Capture To").setDesc("File to capture to. Supports some format syntax.");
+    new import_obsidian22.Setting(this.contentEl).setName("Capture To").setDesc("File to capture to. Supports some format syntax.");
     const captureToContainer = this.contentEl.createDiv("captureToContainer");
     const captureToActiveFileContainer = captureToContainer.createDiv("captureToActiveFileContainer");
     const captureToActiveFileText = captureToActiveFileContainer.createEl("span");
     captureToActiveFileText.textContent = "Capture to active file";
-    const captureToActiveFileToggle = new import_obsidian20.ToggleComponent(
+    const captureToActiveFileToggle = new import_obsidian22.ToggleComponent(
       captureToActiveFileContainer
     );
     captureToActiveFileToggle.setValue((_a = this.choice) == null ? void 0 : _a.captureToActiveFile);
@@ -12407,7 +12439,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
       (async () => formatDisplay.textContent = await displayFormatter.format(
         this.choice.captureTo
       ))();
-      const formatInput = new import_obsidian20.TextComponent(captureToFileContainer);
+      const formatInput = new import_obsidian22.TextComponent(captureToFileContainer);
       formatInput.setPlaceholder("File name format");
       textField = formatInput;
       formatInput.inputEl.style.width = "100%";
@@ -12431,7 +12463,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
   }
   addPrependSetting() {
     var _a;
-    const prependSetting = new import_obsidian20.Setting(this.contentEl);
+    const prependSetting = new import_obsidian22.Setting(this.contentEl);
     prependSetting.setName("Write to bottom of file").setDesc(
       `Put value at the bottom of the file - otherwise at the ${((_a = this.choice) == null ? void 0 : _a.captureToActiveFile) ? "active cursor location" : "top"}.`
     ).addToggle((toggle) => {
@@ -12446,14 +12478,14 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     });
   }
   addTaskSetting() {
-    const taskSetting = new import_obsidian20.Setting(this.contentEl);
+    const taskSetting = new import_obsidian22.Setting(this.contentEl);
     taskSetting.setName("Task").setDesc("Formats the value as a task.").addToggle((toggle) => {
       toggle.setValue(this.choice.task);
       toggle.onChange((value) => this.choice.task = value);
     });
   }
   addAppendLinkSetting() {
-    const appendLinkSetting = new import_obsidian20.Setting(this.contentEl);
+    const appendLinkSetting = new import_obsidian22.Setting(this.contentEl);
     appendLinkSetting.setName("Append link").setDesc(
       "Add a link on your current cursor position, linking to the file you're capturing to."
     ).addToggle((toggle) => {
@@ -12463,7 +12495,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
   }
   addInsertAfterSetting() {
     let insertAfterInput;
-    const insertAfterSetting = new import_obsidian20.Setting(this.contentEl);
+    const insertAfterSetting = new import_obsidian22.Setting(this.contentEl);
     insertAfterSetting.setName("Insert after").setDesc(
       "Insert capture after specified line. Accepts format syntax."
     ).addToggle((toggle) => {
@@ -12482,7 +12514,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     (async () => insertAfterFormatDisplay.innerText = await displayFormatter.format(
       this.choice.insertAfter.after
     ))();
-    insertAfterInput = new import_obsidian20.TextComponent(this.contentEl);
+    insertAfterInput = new import_obsidian22.TextComponent(this.contentEl);
     insertAfterInput.setPlaceholder("Insert after");
     insertAfterInput.inputEl.style.width = "100%";
     insertAfterInput.inputEl.style.marginBottom = "8px";
@@ -12496,7 +12528,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
       this.plugin
     );
     if (this.choice.insertAfter.enabled) {
-      const insertAtEndSetting = new import_obsidian20.Setting(this.contentEl);
+      const insertAtEndSetting = new import_obsidian22.Setting(this.contentEl);
       insertAtEndSetting.setName("Insert at end of section").setDesc(
         "Insert the text at the end of the section, rather than at the top."
       ).addToggle(
@@ -12507,7 +12539,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
           );
         }
       );
-      const createLineIfNotFound = new import_obsidian20.Setting(this.contentEl);
+      const createLineIfNotFound = new import_obsidian22.Setting(this.contentEl);
       createLineIfNotFound.setName("Create line if not found").setDesc("Creates the 'insert after' line if it is not found.").addToggle((toggle) => {
         var _a, _b;
         if (!((_a = this.choice.insertAfter) == null ? void 0 : _a.createIfNotFound))
@@ -12529,14 +12561,14 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
   }
   addFormatSetting() {
     let textField;
-    const enableSetting = new import_obsidian20.Setting(this.contentEl);
+    const enableSetting = new import_obsidian22.Setting(this.contentEl);
     enableSetting.setName("Capture format").setDesc("Set the format of the capture.").addToggle((toggleComponent) => {
       toggleComponent.setValue(this.choice.format.enabled).onChange((value) => {
         this.choice.format.enabled = value;
         textField.setDisabled(!value);
       });
     });
-    const formatInput = new import_obsidian20.TextAreaComponent(this.contentEl);
+    const formatInput = new import_obsidian22.TextAreaComponent(this.contentEl);
     formatInput.setPlaceholder("Format");
     textField = formatInput;
     formatInput.inputEl.style.width = "100%";
@@ -12560,7 +12592,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
         createWithTemplate: false,
         template: ""
       };
-    const createFileIfItDoesntExist = new import_obsidian20.Setting(this.contentEl);
+    const createFileIfItDoesntExist = new import_obsidian22.Setting(this.contentEl);
     createFileIfItDoesntExist.setName("Create file if it doesn't exist").addToggle(
       (toggle) => {
         var _a, _b;
@@ -12574,7 +12606,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
   addCreateWithTemplateSetting() {
     var _a, _b, _c, _d, _e;
     let templateSelector;
-    const createWithTemplateSetting = new import_obsidian20.Setting(this.contentEl);
+    const createWithTemplateSetting = new import_obsidian22.Setting(this.contentEl);
     createWithTemplateSetting.setName("Create file with given template.").addToggle(
       (toggle) => {
         var _a2;
@@ -12586,7 +12618,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
         });
       }
     );
-    templateSelector = new import_obsidian20.TextComponent(this.contentEl);
+    templateSelector = new import_obsidian22.TextComponent(this.contentEl);
     templateSelector.setValue((_c = (_b = (_a = this.choice) == null ? void 0 : _a.createFileIfItDoesntExist) == null ? void 0 : _b.template) != null ? _c : "").setPlaceholder("Template path").setDisabled(
       !((_e = (_d = this.choice) == null ? void 0 : _d.createFileIfItDoesntExist) == null ? void 0 : _e.createWithTemplate)
     );
@@ -12603,7 +12635,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     });
   }
   addOpenFileSetting() {
-    const noOpenSetting = new import_obsidian20.Setting(this.contentEl);
+    const noOpenSetting = new import_obsidian22.Setting(this.contentEl);
     noOpenSetting.setName("Open").setDesc("Open the file that is captured to.").addToggle((toggle) => {
       toggle.setValue(this.choice.openFile);
       toggle.onChange((value) => {
@@ -12620,7 +12652,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
     });
   }
   addOpenFileInNewTabSetting() {
-    const newTabSetting = new import_obsidian20.Setting(this.contentEl);
+    const newTabSetting = new import_obsidian22.Setting(this.contentEl);
     newTabSetting.setName("New Tab").setDesc("Open the file that is captured to in a new tab.").addToggle((toggle) => {
       var _a, _b;
       toggle.setValue((_b = (_a = this.choice) == null ? void 0 : _a.openFileInNewTab) == null ? void 0 : _b.enabled);
@@ -12644,7 +12676,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
         (value) => this.choice.openFileInNewTab.direction = value
       );
     });
-    new import_obsidian20.Setting(this.contentEl).setName("Focus new pane").setDesc("Focus the opened tab immediately").addToggle(
+    new import_obsidian22.Setting(this.contentEl).setName("Focus new pane").setDesc("Focus the opened tab immediately").addToggle(
       (toggle) => toggle.setValue(this.choice.openFileInNewTab.focus).onChange(
         (value) => this.choice.openFileInNewTab.focus = value
       )
@@ -12653,7 +12685,7 @@ var CaptureChoiceBuilder = class extends ChoiceBuilder {
 };
 
 // src/gui/ChoiceBuilder/macroChoiceBuilder.ts
-var import_obsidian21 = require("obsidian");
+var import_obsidian23 = require("obsidian");
 var MacroChoiceBuilder = class extends ChoiceBuilder {
   constructor(app2, choice, macros) {
     super(app2);
@@ -12668,7 +12700,7 @@ var MacroChoiceBuilder = class extends ChoiceBuilder {
   }
   addSelectMacroSearch() {
     const selectMacroDropdownContainer = this.contentEl.createDiv("selectMacroDropdownContainer");
-    const dropdown = new import_obsidian21.DropdownComponent(
+    const dropdown = new import_obsidian23.DropdownComponent(
       selectMacroDropdownContainer
     );
     const macroOptions = {};
@@ -12700,10 +12732,10 @@ var MacroChoiceBuilder = class extends ChoiceBuilder {
 };
 
 // src/MacrosManager.ts
-var import_obsidian25 = require("obsidian");
+var import_obsidian27 = require("obsidian");
 
 // src/gui/MacroGUIs/MacroBuilder.ts
-var import_obsidian24 = require("obsidian");
+var import_obsidian26 = require("obsidian");
 
 // src/types/macros/UserScript.ts
 var UserScript = class extends Command {
@@ -12853,7 +12885,7 @@ var StandardCommand = class extends SvelteComponent {
 var StandardCommand_default = StandardCommand;
 
 // src/gui/MacroGUIs/Components/WaitCommand.svelte
-function add_css8(target) {
+function add_css7(target) {
   append_styles(target, "svelte-1196d9p", ".dotInput.svelte-1196d9p{border:none;display:inline;font-family:inherit;font-size:inherit;padding:0;width:0;text-decoration:underline dotted;background-color:transparent}.dotInput.svelte-1196d9p:hover{background-color:transparent}");
 }
 function create_fragment13(ctx) {
@@ -13032,7 +13064,7 @@ var WaitCommand = class extends SvelteComponent {
         startDrag: 1,
         dragDisabled: 2
       },
-      add_css8
+      add_css7
     );
   }
 };
@@ -13195,7 +13227,7 @@ var NestedChoiceCommand = class extends SvelteComponent {
 var NestedChoiceCommand_default = NestedChoiceCommand;
 
 // src/gui/MacroGUIs/CommandList.svelte
-var import_obsidian23 = require("obsidian");
+var import_obsidian25 = require("obsidian");
 
 // src/gui/MacroGUIs/Components/UserScriptCommand.svelte
 function create_fragment15(ctx) {
@@ -13360,8 +13392,8 @@ var UserScriptCommand = class extends SvelteComponent {
 var UserScriptCommand_default = UserScriptCommand;
 
 // src/gui/MacroGUIs/UserScriptSettingsModal.ts
-var import_obsidian22 = require("obsidian");
-var UserScriptSettingsModal = class extends import_obsidian22.Modal {
+var import_obsidian24 = require("obsidian");
+var UserScriptSettingsModal = class extends import_obsidian24.Modal {
   constructor(app2, command, settings) {
     super(app2);
     this.command = command;
@@ -13421,7 +13453,7 @@ var UserScriptSettingsModal = class extends import_obsidian22.Modal {
     el.type = "password";
   }
   addInputBox(name, value, placeholder, passwordOnBlur) {
-    new import_obsidian22.Setting(this.contentEl).setName(name).addText((input) => {
+    new import_obsidian24.Setting(this.contentEl).setName(name).addText((input) => {
       input.setValue(value).onChange((value2) => this.command.settings[name] = value2).setPlaceholder(placeholder != null ? placeholder : "");
       if (passwordOnBlur) {
         this.setPasswordOnBlur(input.inputEl);
@@ -13429,21 +13461,21 @@ var UserScriptSettingsModal = class extends import_obsidian22.Modal {
     });
   }
   addToggle(name, value) {
-    new import_obsidian22.Setting(this.contentEl).setName(name).addToggle(
+    new import_obsidian24.Setting(this.contentEl).setName(name).addToggle(
       (toggle) => toggle.setValue(value).onChange((value2) => this.command.settings[name] = value2)
     );
   }
   addDropdown(name, options, value) {
-    new import_obsidian22.Setting(this.contentEl).setName(name).addDropdown((dropdown) => {
+    new import_obsidian24.Setting(this.contentEl).setName(name).addDropdown((dropdown) => {
       options.forEach((item) => dropdown.addOption(item, item));
       dropdown.setValue(value);
       dropdown.onChange((value2) => this.command.settings[name] = value2);
     });
   }
   addFormatInput(name, value, placeholder) {
-    new import_obsidian22.Setting(this.contentEl).setName(name);
+    new import_obsidian24.Setting(this.contentEl).setName(name);
     const formatDisplay = this.contentEl.createEl("span");
-    const input = new import_obsidian22.TextAreaComponent(this.contentEl);
+    const input = new import_obsidian24.TextAreaComponent(this.contentEl);
     new FormatSyntaxSuggester(this.app, input.inputEl, QuickAdd.instance);
     const displayFormatter = new FormatDisplayFormatter(
       this.app,
@@ -13461,7 +13493,7 @@ var UserScriptSettingsModal = class extends import_obsidian22.Modal {
 };
 
 // src/gui/MacroGUIs/CommandList.svelte
-function add_css9(target) {
+function add_css8(target) {
   append_styles(target, "svelte-1ukgrgp", ".quickAddCommandList.svelte-1ukgrgp{display:grid;grid-template-columns:auto;width:auto;border:0 solid black;overflow-y:auto;height:auto;margin-bottom:8px;padding:20px}");
 }
 function get_each_context4(ctx, list, i) {
@@ -14114,7 +14146,7 @@ var CommandList = class extends SvelteComponent {
         plugin: 12,
         updateCommandList: 13
       },
-      add_css9,
+      add_css8,
       [-1, -1]
     );
   }
@@ -14149,7 +14181,7 @@ var NestedChoiceCommand2 = class extends Command {
 };
 
 // src/gui/MacroGUIs/MacroBuilder.ts
-var MacroBuilder = class extends import_obsidian24.Modal {
+var MacroBuilder = class extends import_obsidian26.Modal {
   constructor(app2, plugin, macro, choices) {
     super(app2);
     this.commands = [];
@@ -14227,7 +14259,7 @@ var MacroBuilder = class extends import_obsidian24.Modal {
       this.addCommandToMacro(command);
       input.setValue("");
     };
-    new import_obsidian24.Setting(this.contentEl).setName("Obsidian command").setDesc("Add an Obsidian command").addText((textComponent) => {
+    new import_obsidian26.Setting(this.contentEl).setName("Obsidian command").setDesc("Add an Obsidian command").addText((textComponent) => {
       input = textComponent;
       textComponent.inputEl.style.marginRight = "1em";
       textComponent.setPlaceholder("Obsidian command");
@@ -14275,7 +14307,7 @@ var MacroBuilder = class extends import_obsidian24.Modal {
       }
       this.addCommandToMacro(command);
     };
-    new import_obsidian24.Setting(this.contentEl).setName("Editor commands").setDesc("Add editor command").addDropdown((dropdown) => {
+    new import_obsidian26.Setting(this.contentEl).setName("Editor commands").setDesc("Add editor command").addDropdown((dropdown) => {
       dropdownComponent = dropdown;
       dropdown.selectEl.style.marginRight = "1em";
       dropdown.addOption("Copy" /* Copy */, "Copy" /* Copy */).addOption("Cut" /* Cut */, "Cut" /* Cut */).addOption("Paste" /* Paste */, "Paste" /* Paste */).addOption(
@@ -14302,7 +14334,7 @@ var MacroBuilder = class extends import_obsidian24.Modal {
       this.addCommandToMacro(new UserScript(value, file.path));
       input.setValue("");
     };
-    new import_obsidian24.Setting(this.contentEl).setName("User Scripts").setDesc("Add user script").addText((textComponent) => {
+    new import_obsidian26.Setting(this.contentEl).setName("User Scripts").setDesc("Add user script").addText((textComponent) => {
       input = textComponent;
       textComponent.inputEl.style.marginRight = "1em";
       textComponent.setPlaceholder("User script");
@@ -14333,7 +14365,7 @@ var MacroBuilder = class extends import_obsidian24.Modal {
       this.addCommandToMacro(new ChoiceCommand(choice.name, choice.id));
       input.setValue("");
     };
-    new import_obsidian24.Setting(this.contentEl).setName("Choices").setDesc("Add existing choice").addText((textComponent) => {
+    new import_obsidian26.Setting(this.contentEl).setName("Choices").setDesc("Add existing choice").addText((textComponent) => {
       input = textComponent;
       textComponent.inputEl.style.marginRight = "1em";
       textComponent.setPlaceholder("Choice");
@@ -14407,7 +14439,7 @@ var MacroBuilder = class extends import_obsidian24.Modal {
     this.addAddWaitCommandButton(quickCommandContainer);
   }
   addAddWaitCommandButton(quickCommandContainer) {
-    const button = new import_obsidian24.ButtonComponent(
+    const button = new import_obsidian26.ButtonComponent(
       quickCommandContainer
     );
     button.setIcon("clock").setTooltip("Add wait command").onClick(() => {
@@ -14415,7 +14447,7 @@ var MacroBuilder = class extends import_obsidian24.Modal {
     });
   }
   newChoiceButton(container, typeName, type) {
-    const button = new import_obsidian24.ButtonComponent(container);
+    const button = new import_obsidian26.ButtonComponent(container);
     button.setButtonText(typeName).setTooltip(`Add ${typeName} Choice`).onClick(() => {
       const captureChoice = new type(
         `Untitled ${typeName} Choice`
@@ -14440,7 +14472,7 @@ var QuickAddMacro = class {
 };
 
 // src/MacrosManager.ts
-var MacrosManager = class extends import_obsidian25.Modal {
+var MacrosManager = class extends import_obsidian27.Modal {
   constructor(app2, plugin, macros, choices) {
     super(app2);
     this.app = app2;
@@ -14478,14 +14510,14 @@ var MacrosManager = class extends import_obsidian25.Modal {
   }
   addMacroSetting(macro, container) {
     const configureMacroContainer = container.createDiv();
-    const macroSetting = new import_obsidian25.Setting(configureMacroContainer);
+    const macroSetting = new import_obsidian27.Setting(configureMacroContainer);
     macroSetting.setName(macro.name);
     macroSetting.infoEl.style.fontWeight = "bold";
     this.addMacroConfigurationItem(
       configureMacroContainer,
       (itemContainerEl) => {
         this.addSpanWithText(itemContainerEl, "Run on plugin load");
-        const toggle = new import_obsidian25.ToggleComponent(
+        const toggle = new import_obsidian27.ToggleComponent(
           itemContainerEl
         );
         toggle.setValue(macro.runOnStartup);
@@ -14499,7 +14531,7 @@ var MacrosManager = class extends import_obsidian25.Modal {
     this.addMacroConfigurationItem(
       configureMacroContainer,
       (itemContainerEl) => {
-        const deleteButton = new import_obsidian25.ButtonComponent(
+        const deleteButton = new import_obsidian27.ButtonComponent(
           itemContainerEl
         );
         deleteButton.setClass("mod-warning");
@@ -14510,7 +14542,7 @@ var MacrosManager = class extends import_obsidian25.Modal {
           this.reload();
           this.macroContainer.scrollTop = scroll;
         });
-        const configureButton = new import_obsidian25.ButtonComponent(
+        const configureButton = new import_obsidian27.ButtonComponent(
           itemContainerEl
         );
         configureButton.setClass("mod-cta");
@@ -14570,11 +14602,11 @@ var MacrosManager = class extends import_obsidian25.Modal {
   addAddMacroBar() {
     const addMacroBarContainer = this.contentEl.createDiv();
     addMacroBarContainer.addClass("addMacroBarContainer");
-    const nameInput = new import_obsidian25.TextComponent(
+    const nameInput = new import_obsidian27.TextComponent(
       addMacroBarContainer
     );
     nameInput.setPlaceholder("Macro name");
-    const addMacroButton = new import_obsidian25.ButtonComponent(
+    const addMacroButton = new import_obsidian27.ButtonComponent(
       addMacroBarContainer
     );
     addMacroButton.setButtonText("Add macro").setClass("mod-cta").onClick(() => {
@@ -14601,7 +14633,7 @@ var MacrosManager = class extends import_obsidian25.Modal {
 };
 
 // src/gui/choiceList/ChoiceView.svelte
-function add_css10(target) {
+function add_css9(target) {
   append_styles(target, "svelte-wcmtyt", ".choiceViewBottomBar.svelte-wcmtyt{display:flex;flex-direction:row;align-items:center;justify-content:space-between;margin-top:1rem}@media(max-width: 800px){.choiceViewBottomBar.svelte-wcmtyt{flex-direction:column}}");
 }
 function create_fragment17(ctx) {
@@ -14888,7 +14920,7 @@ var ChoiceView = class extends SvelteComponent {
         app: 10,
         plugin: 11
       },
-      add_css10
+      add_css9
     );
   }
 };
@@ -14908,7 +14940,7 @@ var DEFAULT_SETTINGS = {
     mutualExclusionInsertAfterAndWriteToBottomOfFile: false
   }
 };
-var QuickAddSettingsTab = class extends import_obsidian27.PluginSettingTab {
+var QuickAddSettingsTab = class extends import_obsidian29.PluginSettingTab {
   constructor(app2, plugin) {
     super(app2, plugin);
     this.plugin = plugin;
@@ -14926,7 +14958,7 @@ var QuickAddSettingsTab = class extends import_obsidian27.PluginSettingTab {
       this.choiceView.$destroy();
   }
   addChoicesSetting() {
-    const setting = new import_obsidian27.Setting(this.containerEl);
+    const setting = new import_obsidian29.Setting(this.containerEl);
     setting.infoEl.remove();
     setting.settingEl.style.display = "block";
     this.choiceView = new ChoiceView_default({
@@ -14948,7 +14980,7 @@ var QuickAddSettingsTab = class extends import_obsidian27.PluginSettingTab {
     });
   }
   addUseMultiLineInputPromptSetting() {
-    new import_obsidian27.Setting(this.containerEl).setName("Use Multi-line Input Prompt").setDesc(
+    new import_obsidian29.Setting(this.containerEl).setName("Use Multi-line Input Prompt").setDesc(
       "Use multi-line input prompt instead of single-line input prompt"
     ).addToggle(
       (toggle) => toggle.setValue(this.plugin.settings.inputPrompt === "multi-line").setTooltip("Use multi-line input prompt").onChange((value) => {
@@ -14962,7 +14994,7 @@ var QuickAddSettingsTab = class extends import_obsidian27.PluginSettingTab {
     );
   }
   addTemplateFolderPathSetting() {
-    const setting = new import_obsidian27.Setting(this.containerEl);
+    const setting = new import_obsidian29.Setting(this.containerEl);
     setting.setName("Template Folder Path");
     setting.setDesc(
       "Path to the folder where templates are stored. Used to suggest template files when configuring QuickAdd."
@@ -14977,7 +15009,7 @@ var QuickAddSettingsTab = class extends import_obsidian27.PluginSettingTab {
       new GenericTextSuggester(
         app,
         text2.inputEl,
-        app.vault.getAllLoadedFiles().filter((f) => f instanceof import_obsidian27.TFolder && f.path !== "/").map((f) => f.path)
+        app.vault.getAllLoadedFiles().filter((f) => f instanceof import_obsidian29.TFolder && f.path !== "/").map((f) => f.path)
       );
     });
   }
@@ -15020,7 +15052,7 @@ var ConsoleErrorLogger = class extends QuickAddLogger {
 };
 
 // src/logger/guiLogger.ts
-var import_obsidian28 = require("obsidian");
+var import_obsidian30 = require("obsidian");
 var GuiLogger = class extends QuickAddLogger {
   constructor(plugin) {
     super();
@@ -15028,11 +15060,11 @@ var GuiLogger = class extends QuickAddLogger {
   }
   logError(msg) {
     const error = this.getQuickAddError(msg, "ERROR" /* Error */);
-    new import_obsidian28.Notice(this.formatOutputString(error), 15e3);
+    new import_obsidian30.Notice(this.formatOutputString(error), 15e3);
   }
   logWarning(msg) {
     const warning = this.getQuickAddError(msg, "WARNING" /* Warning */);
-    new import_obsidian28.Notice(this.formatOutputString(warning));
+    new import_obsidian30.Notice(this.formatOutputString(warning));
   }
   logMessage(msg) {
   }
@@ -15053,7 +15085,7 @@ var StartupMacroEngine = class extends MacroChoiceEngine {
 };
 
 // src/engine/TemplateChoiceEngine.ts
-var import_obsidian29 = require("obsidian");
+var import_obsidian31 = require("obsidian");
 
 // src/utils/invariant.ts
 function invariant(condition, message) {
@@ -15097,7 +15129,7 @@ var TemplateChoiceEngine = class extends TemplateEngine {
       let createdFile;
       if (await this.app.vault.adapter.exists(filePath)) {
         const file = this.app.vault.getAbstractFileByPath(filePath);
-        if (!(file instanceof import_obsidian29.TFile) || file.extension !== "md") {
+        if (!(file instanceof import_obsidian31.TFile) || file.extension !== "md") {
           log.logError(
             `'${filePath}' already exists and is not a valid markdown file.`
           );
@@ -16175,8 +16207,8 @@ This is in order to prevent data loss.`
 };
 
 // src/gui/suggesters/choiceSuggester.ts
-var import_obsidian30 = require("obsidian");
-var ChoiceSuggester = class extends import_obsidian30.FuzzySuggestModal {
+var import_obsidian32 = require("obsidian");
+var ChoiceSuggester = class extends import_obsidian32.FuzzySuggestModal {
   constructor(plugin, choices, choiceExecutor) {
     super(plugin.app);
     this.plugin = plugin;
@@ -16190,6 +16222,11 @@ var ChoiceSuggester = class extends import_obsidian30.FuzzySuggestModal {
   }
   static Open(plugin, choices, choiceExecutor) {
     new ChoiceSuggester(plugin, choices, choiceExecutor).open();
+  }
+  renderSuggestion(item, el) {
+    el.empty();
+    import_obsidian32.MarkdownRenderer.renderMarkdown(item.item.name, el, "", this.plugin);
+    el.classList.add("quickadd-choice-suggestion");
   }
   getItemText(item) {
     return item.name;
@@ -16494,7 +16531,7 @@ QuickAdd will now revert to backup.`
 var migrate_default = migrate;
 
 // src/main.ts
-var QuickAdd = class extends import_obsidian31.Plugin {
+var QuickAdd = class extends import_obsidian33.Plugin {
   get api() {
     return QuickAddApi.GetApi(app, this, new ChoiceExecutor(app, this));
   }
@@ -16530,7 +16567,7 @@ var QuickAdd = class extends import_obsidian31.Plugin {
         console.log(`Test QuickAdd (dev)`);
         const fn2 = async () => {
           const activeView = await this.app.workspace.getActiveViewOfType(
-            import_obsidian31.MarkdownView
+            import_obsidian33.MarkdownView
           );
           if (!activeView)
             return false;

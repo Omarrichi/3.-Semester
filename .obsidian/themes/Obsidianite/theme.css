@@ -15,7 +15,7 @@
    Light theme is still working in progress,
    but it wil come soon or later.
 ******************************************/
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 /* .theme-light {
   --background-primary: #fbfbfb;
   --background-primary-alt: #fbfbfb;
@@ -62,15 +62,15 @@
   --text-a: #6bcafb;
   --text-a-hover: #6bcafb;
   --text-mark: #263d92;
-  --pre-code: #252525;
+  --code-background: var(--background-secondary);
   --interactive-accent: rgba(14, 210, 247, 0.5);
   --interactive-accent-hover: rgba(14, 210, 247, 0.8);
   --interactive-before: #5e6565;
   --blockquote-border: #4aa8fb;
   --tag-background: rgba(14, 210, 247, 0.15);
   --interactive-accent-rgb: #3dd7fb;
-  --font-family-editor: 'Rubik', sans-serif;
-  --font-family-preview: 'Rubik', sans-serif;
+  --font-family-editor: 'Rubik';
+  --font-family-preview: 'Rubik';
   --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
   --bg-accent-55: rgba(14, 210, 247, 0.55);
   --bg-accent-25: rgba(14, 210, 247, 0.25);
@@ -677,6 +677,7 @@ em {
 .markdown-source-view.mod-cm6 .cm-indent::before {
   border-width: 2px;
   border-color: var(--text-accent);
+  margin-left: -1px;
   opacity: 0.35;
   transition: opacity 500ms linear ease-in-out;
 }
@@ -940,7 +941,6 @@ h6 a.tag {
 
 .cm-s-obsidian span.cm-inline-code.cm-formatting-code {
   display: inline-flex;
-  max-width: 0.55rem;
   min-width: 0.55rem;
 }
 
@@ -948,7 +948,7 @@ h6 a.tag {
 | CODE FENCE STYLING
 **--------------------**/
 
-.cm-s-obsidian span.code-block-flair {
+.cm-s-obsidian span.code-block-flair:not(:empty) {
   color: var(--text-accent);
   font-weight: 600;
   text-transform: uppercase;
@@ -1048,6 +1048,10 @@ pre[class$='react']:before {
 
 pre[class$='shell']:before {
   content: 'Shell';
+}
+
+pre[class$='powershell']:before {
+  content: 'PowerShell';
 }
 
 pre[class$='json']:before {

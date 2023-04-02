@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WebTech/6. Woche 24.11 - 30.11.md",
+                "file": "PSP/Versuch 6 LED.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WebTech/6. Woche 24.11 - 30.11.md",
+                "file": "PSP/Versuch 6 LED.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "WebTech/6. Woche 24.11 - 30.11.md",
+                "file": "PSP/Versuch 6 LED.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "WebTech/6. Woche 24.11 - 30.11.md"
+                "file": "PSP/Versuch 6 LED.md"
               }
             }
           },
@@ -159,15 +159,25 @@
   },
   "active": "c99e41d98c23f509",
   "lastOpenFiles": [
-    "WebTech/5. Woche 17.11 - 23.11.md",
-    "WebTech/6. Woche 24.11 - 30.11.md",
+    "Auto Complete.md",
+    "Frage Katalog.md",
+    "WebTech/1. Woche 13.10 - 19.10.md",
     "WebTech/7. Woche 01.12 - 07.12.md",
+    "WebTech/2. Woche 20.10 - 26.10.md",
+    "WebTech/6. Woche 24.11 - 30.11.md",
+    "PSP/Versuch 4.md",
+    "PSP/Versuch 5.md",
+    "PSP/Versuch 3.md",
+    "PSP/Versuch 1.md",
+    "DatKom/1. VL 27.10.22.md",
+    "KI/4. Vorlesung 04.10.22.md",
+    "asdasd.md",
+    "KI/3. Vorlesung 25.10.22.md",
+    "KI/2. Vorlesung 21.10.22.md",
+    "KI/1. Vorlesung 18.10.22.md",
+    "WebTech/5. Woche 17.11 - 23.11.md",
     "WebTech/4. Woche 10.11 - 16.11.md",
     "WebTech/3. Woche 27.10 - 9.11.md",
-    "WebTech/2. Woche 20.10 - 26.10.md",
-    "WebTech/1. Woche 13.10 - 19.10.md",
-    "Frage Katalog.md",
-    "BuK/15. Vorlesung 06.12.22.md",
-    "Auto Complete.md"
+    "BuK/15. Vorlesung 06.12.22.md"
   ]
 }
